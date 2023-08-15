@@ -9,7 +9,14 @@ module.exports = {
     extend: {
       animation: {
         "spin-slow": "spin 3s linear infinite",
-        "spin-slower": "spin 2s linear infinite",
+        "spin-slower": "spin 1.9s linear infinite",
+        wiggle: "wiggle 2s ease-in-out infinite",
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "scale(101%)" },
+          "50%": { transform: "scale(80%)" },
+        },
       },
       backgroundImage: {},
     },
