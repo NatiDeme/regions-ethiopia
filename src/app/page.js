@@ -4,7 +4,7 @@ import Indicators from "./components/indicators";
 export default function Home() {
   return (
     <>
-      <Indicators />
+      <Indicators bgprimary="bg-black" borderprimary="border-black" />
     </>
   );
 }
