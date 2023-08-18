@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import styles from "./components/modal.css";
 import Modal from "./components/Modal";
 import { useState } from "react";
 import Indicators from "./components/indicators";
@@ -8,17 +7,33 @@ import data from "./data/ethiopian_region_isolated.json";
 
 export default function Home() {
   console.log(data.maps[0]);
-  const [content, setContent] = useState();
-  const [modalOpen, setModalOpen] = useState(false);
+  const [content, setContent] = useState(data.maps[0]);
+  console.log(content);
 
   const handleClick = (id) => {
     const country = data.maps.find((x) => x.map === id);
-    setModalOpen(true);
     setContent(country);
+    document.getElementById("firstElem").style.display = "block";
+  };
+  const handleClose = () => {
+    document.getElementById("firstElem").style.display = "none";
   };
   return (
     <>
-      {modalOpen && <Modal setOpenModal={setModalOpen} contents={content} />}
+      <div
+        id="firstElem"
+        className=" hidden fixed z-[1] w-screen h-full bg-transparent"
+      >
+        <div className="w-[100rem] max-h-min mt-10 rounded-xl flex flex-col p-6 bg-white shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
+          <button
+            className="text-2xl bg-transparent border-none cursor-pointer"
+            onClick={() => handleClose()}
+          >
+            X
+          </button>
+          <Modal contents={content} />
+        </div>
+      </div>
       {data.maps.map((city, i) => (
         <button id={`${i}`} key={i} onClick={() => handleClick(city.map)}>
           {" "}
