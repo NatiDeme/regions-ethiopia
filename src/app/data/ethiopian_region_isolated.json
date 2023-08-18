@@ -43,7 +43,7 @@
     {   
         "map":5,
         "video_path":"/picture",
-        "image_path":"/Basins-05.png",
+        "image_path":"/Basins_05.png",
         "title":"Awash Basin",
         "description":"The Awash basin has been the most intensively  studied river basin in Ethiopia and, because of its strategic location, good access facilities, available land and water resources, is currently the most developed part of Ethiopia in terms of its irrigated agriculture. The first ever study of this basin was carried out between 1961 and 1965. It covers a total area of 110,000sq.km of which 64,000sq.km, comprising the western catchment, drains to the River Awash and its tributaries. The remaining 46,000sq.km, comprises the so-called Eastern Catchment which drains into the desert area and does not contribute to the main river course. The river rises at an elevation of about 3,000m in the Central Ethiopian Highlands, west of Addis Ababa and then flows generally north eastwards along the rift valley into the Afar Triangle where it terminates in Lake Abe at an elevation of 250m. The main river length is about 1,200km. Once the project had been commenced, it was a basin-wide project, which saw an increase in the socio-economical and quality of life not only all around the basin,  but also created a large market network for the commercial agricultural goods that were being grown in the Awash Area.",
         "images": []
@@ -52,7 +52,7 @@
     {   
         "map":6,
         "video_path":"/picture",
-        "image_path":"/Basins-06.png",
+        "image_path":"/Basins_07.png",
         "title":"Baro-Akobo Basin",
         "description":"The Baro-akobo basin encompasses a total of 24,276 square kilometers and formerly existed within the 1958 boundaries of Gambela Awraja. On its western, northwestern and southwestern borders it is adjacent to Sudan, with Illubabor Province located on its eastern and southeastern side. In efforts to further advance the prosperity of the region, a development plan was commenced in order to encourage rainfed and irrigated farming as well as heightened employment opportunities for able-bodied individuals. Fortunately, since the initiation of this project considerable progress has occurred in multiple sectors; significantly improving the quality of life for those living in the area. The major rivers that stream through this area are Baro, Pibor and Akobo. All three stem from mountains situated at altitudes between 1,200 - 2,350 meters above sea level.",
         "images": [
@@ -68,7 +68,7 @@
     {   
         "map":7,
         "video_path":"/picture",
-        "image_path":"/Basins-07.png",
+        "image_path":"/Basins_07.png",
         "title":"Omo-Gibe Basin",
         "description":"The Omo-Gibe river basin is almost 79,000sq.km in area and is situated in the south-west of Ethiopia. The Basin encompasses parts of two National Regional States(NRSs): Oromiya(which occupies the North eastern part of the basin), and the Southern Nations and Nationalities People’s regional state(SNNPRS). The Basin includes some or all of 81 woredas. The total mean annual flow from the river basin is estimated at about 16.6 BMC. 15 medium-scale irrigation potential are identified in the basin, with an estimated irrigable area of 57,900 and 10,028 hectares respectively, and a total irrigable area of 67,928 hectares (MoWR data). However, this figure could be much higher given the vast land area of lower Omo. In terms of hydropower development potential it is the second largest, and it is a basin in which most of the current hydropower development is taking place. The basin is also endowed with a variety of wildlife; with Omo and Mago parks being located in the basin, its tourism potential will be further exploited as infrastructure develops in the area",
         "images": []
@@ -86,7 +86,7 @@
     {   
         "map":9,
         "video_path":"/picture",
-        "image_path":"/Basins-09.png",
+        "image_path":"/Basins-11.png",
         "title":"Genale-Dawa Basin",
         "description":"The Genale-Dawa River Basin is the third largest basin in Ethiopia. It is situated in the southern part of the country, covering an area of 172,889 km² (15% of Ethiopia's total area). The Basin includes three regional states: Oromiya, Somali and SNNP. In terms of geographical area, 53% of the Basin lies in Oromiya Region and 45% is located in Somali Region. The share of SNNP is very small at only 2%. Seven administrative zones are partly or completely located within the Basin: Bale, Guji and Borena Zones in Oromiya Region, Sidama and Gedeo Zones in SNNPR; Afder and Liben Zones in Somali Region.The Basin is divided into four major landforms, namely highlands and plateau surrounded by a range of volcanoes, steep sloping escarpments, gently sloping lowlands adjacent to the foot of these escarpments, and lowlands and flood plain basins. Genale-Dawa River Basin contains a number of different climatic zones, including hot arid climate in the south-eastern region along Somalia's border with the Wabe-Shebele Basin; hot semi-arid in the lower central zone of the basin and south west area; tropical rainy climate in extreme south and higher central basin areas; warm temperate climate in mid western area and boundary divide; warm temperate rainy climate in Sidamo mountains and intermediate zone south of Bale mountains; cool highland climate at highest elevations in Bale mountains. The main drainage system is defined by three principal rivers: Genale, Dawa and Weyb, and their respective sub-catchments. Tributaries of the centrally located Genale River originate form the southern flanks of the Bale Mountains, and from the Sidamo Mountains in the north-west. The Dawa River headwaters are located in the Sidamo Mountains, while the Weyb River originates from the northern flanks of the Bale Mountains. A short distance upstream of the confluence of Genale and Dawa rivers, the Weyb converges with Genale near to the Somalia border at Dolo Odo.  After this point, the combined watercourse becomes the Juba river which flows through Somalia to the Indian Ocean. ",
         "images": []
@@ -95,7 +95,7 @@
     {   
         "map":10,
         "video_path":"/picture",
-        "image_path":"/Basins-10.png",
+        "image_path":"/Basins_11.png",
         "title":"Wabi-shebelle",
         "description":"The Wabi Shebele Basin is a transboundary basin located at Horn of Africa, situated in between Ethiopia and Republic of Somalia. It originates from Bale highlands ranges of the Galama to Ahmar of Ethiopia, about 4000 m altitude and drains portion of Somalia before draining to Indi-an Ocean. More than 70% of the catchment (202,220 km2) is lying in Ethiopia. The air temperature of the Wabi Shebele Basin varies with altitude. The mean monthly temperature of the basin is 19.9˚C. The climate of the basin is dependent on the altitude and strong latitudinal movement of the intertropical convergence zone (ITCZ). The highlands are cool and densely populated while the lowlands are arid and sparsely populated with recorded annual rainfall of 1213 mm and 268 mm respectively. The basin is divided into four geographical areas based on morphometric characteristics and rainfall regimes: upper catchments which characterized by a mountainous area with abrupt valleys; middle catchments which is wider highland and rainy area; eastern catchments which characterized semi-arid areas and lower catchments which covers arid lowland area of the basin. The watershed characteristics analysis using Arc GIS indicate that flood characteristics of Wabi Shebele Basin is related to basin and relief morphometric characteristics. The mean peak flow (QMPF) in Wabi Shebele Basin has large positive association with linear morphometric parameters (like valley length, mean stream length) and with basin morphometric parameter (like drainage size, shape factor) and negative associations with relief morphometric characteristics (like basin elevation and valley slope). The basin has three climatological rainy seasons: spring (February-May), summer (June-September) and winter (October-January). While having the largest area coverage, the basin’s annual runoff is estimated to 3.4 BCM (Billion Meter Cub",
         "images": []
@@ -104,7 +104,7 @@
     {   
         "map":11,
         "video_path":"/picture",
-        "image_path":"/afar_region.png",
+        "image_path":"/region_pic.png",
         "title":"Ogaden Basin",
         "description":"The Ogaden Basin is a sedimentary basin located in eastern Ethiopia and western Somalia. It covers an area of approximately 350,000 square kilometers and is part of the larger East African Rift System. The basin is characterized by a series of fault-bounded blocks that have been uplifted and tilted, resulting in a complex geological structure. The Ogaden Basin is known to contain significant reserves of oil, gas, and other mineral resources. Oil exploration in the basin began in the 1920s, and several international oil companies have conducted exploration activities in the area over the years. However, commercial production of oil and gas has not yet been achieved in the basin due to various factors, including political instability, security concerns, and inadequate infrastructure. Despite these challenges, the potential of the Ogaden Basin as an important hydrocarbon province continues to attract the attention of international oil companies and investors. The Ethiopian government has recently announced plans to further develop the country's oil and gas sector, which includes increasing exploration activities in the Ogaden Basin. If successful, the development of the basin's oil and gas resources could have a significant impact on the local economy and help to meet Ethiopia's growing energy needs.",
         "images": []
@@ -112,7 +112,7 @@
     {   
         "map":12,
         "video_path":"/picture",
-        "image_path":"/Basins-12.png",
+        "image_path":"/region_pic.png",
         "title":"Ayisha Basin",
         "description":"The Ayisha Basin is a geological formation located in northwest China, specifically in the Xinjiang Uyghur Autonomous Region. It is part of the larger Tarim Basin, which is one of the largest sedimentary basins in the world. The Ayisha Basin is roughly rectangular in shape and covers an area of approximately 40,000 square kilometers. It is characterized by a series of fault-bounded blocks that have been tilted and uplifted, resulting in a complex geological structure. The basin is notable for its rich oil and gas reserves, which have been exploited since the 1950s. The oil and gas fields in the Ayisha Basin are part of the larger Tarim Oilfield, which is China's largest oil producer outside of the northeast region. The oil and gas resources in the basin are primarily found in the Ordovician and Silurian rock formations, which are buried at depths of several thousand meters. The development of the oil and gas industry in the Ayisha Basin has had a significant impact on the local economy and has helped to support the rapid development of the region in recent years.",
         "images": []
