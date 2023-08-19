@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Modal from "./components/Modal";
+import Draggable from "react-draggable";
 import { useState } from "react";
 import Indicators from "./components/indicators";
 import data from "./data/ethiopian_region_isolated.json";
@@ -24,15 +25,29 @@ export default function Home() {
         id="firstElem"
         className=" hidden fixed z-[1] w-screen h-full bg-transparent"
       >
-        <div className="w-[100rem] max-h-min mt-10 rounded-xl flex flex-col p-6 bg-white shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
-          <button
-            className="text-2xl bg-transparent border-none cursor-pointer"
-            onClick={() => handleClose()}
-          >
-            X
-          </button>
-          <Modal contents={content} />
-        </div>
+        <Draggable
+          axis="x"
+          handle=".handle"
+          defaultPosition={{ x: 0, y: 0 }}
+          position={null}
+          grid={[25, 25]}
+          scale={1}
+          onStart={this.handleStart}
+          onDrag={this.handleDrag}
+          onStop={this.handleStop}
+        >
+          <div className="handle">
+            <div className="w-[50rem] max-h-min mt-10 rounded-xl flex flex-col p-6 bg-white shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
+              <button
+                className="text-2xl bg-transparent border-none cursor-pointer"
+                onClick={() => handleClose()}
+              >
+                X
+              </button>
+              <Modal contents={content} />
+            </div>
+          </div>
+        </Draggable>
       </div>
       {data.maps.map((city, i) => (
         <button id={`${i}`} key={i} onClick={() => handleClick(city.map)}>
