@@ -26,24 +26,23 @@ export default function Home() {
         className=" hidden fixed z-[1] w-screen h-full bg-transparent"
       >
         <Draggable
-          axis="x"
+          axis="both"
           handle=".handle"
           defaultPosition={{ x: 0, y: 0 }}
           position={null}
-          grid={[25, 25]}
+          grid={[10, 10]}
           scale={1}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}
         >
           <div className="handle">
             <div className="w-[50rem] max-h-min mt-10 rounded-xl flex flex-col p-6 bg-white shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
-              <button
-                className="text-2xl bg-transparent border-none cursor-pointer"
-                onClick={() => handleClose()}
-              >
-                X
-              </button>
+              <div className="w-full flex justify-end">
+                <button
+                  className="text-2xl bg-transparent border-none cursor-pointer"
+                  onClick={() => handleClose()}
+                >
+                  X
+                </button>
+              </div>
               <Modal contents={content} />
             </div>
           </div>
