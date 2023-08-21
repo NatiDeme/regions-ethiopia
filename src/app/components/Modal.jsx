@@ -18,7 +18,7 @@ const Modal = ({ contents }) => {
           alt="Picture of the author"
         />
       </div>
-      <div className="flex-[20%] flex justify-center items-center">
+      <div className="flex-[10%] flex justify-center items-center">
         {contents.title}
       </div>
     </>
