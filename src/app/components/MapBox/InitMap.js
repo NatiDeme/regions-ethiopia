@@ -8,7 +8,7 @@ const initiateMap = (map) => {
         style: 'mapbox://styles/mapbox/satellite-v9',
         projection: 'globe', 
         zoom: 1.5,
-        center: [10, 0]
+        center: [90, 0]
     }
     return new mapboxgl.Map(options)
 }
