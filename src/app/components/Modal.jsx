@@ -7,7 +7,7 @@ const Modal = ({ contents }) => {
           {contents.title}
         </h1>
       </div>
-      <p className="flex-1 mb-3 leading-tight text-sm font-normal text-gray-700 ">
+      <p className=" mb-3 leading-tight text-sm font-normal text-gray-700 ">
         {contents.description}
       </p>
       <div>

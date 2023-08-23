@@ -8,14 +8,16 @@ import { XMarkIcon, EllipsisVerticalIcon } from "@heroicons/react/24/solid";
 import data from "./data/ethiopian_region_isolated.json";
 
 export default function Home() {
-  console.log(data.maps[0]);
   const [content, setContent] = useState(data.maps[0]);
-  console.log(content);
+  // console.log(content);
 
   const handleClick = (id) => {
     const country = data.maps.find((x) => x.map === id);
     setContent(country);
     document.getElementById("firstElem").style.display = "block";
+    document.getElementById("firstElem").classList.add("zoom-in");
+    const rect = document.getElementById("firstElem").getBoundingClientRect();
+    console.log(rect.top, rect.right, rect.bottom, rect.left);
   };
   const handleClose = () => {
     document.getElementById("firstElem").style.display = "none";
@@ -32,8 +34,8 @@ export default function Home() {
           bounds="parent"
           scale={1}
         >
-          <div id="firstElem" className=" hidden absolute z-10 resize">
-            <div className="relative w-[40rem]  h-[30rem] overflow-scroll overflow-x-hidden max-h-min rounded-xl flex flex-col p-6 bg-white shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
+          <div id="firstElem" className="hidden absolute top-0 right-0 z-10 ">
+            <div className="relative resize w-[40rem] h-[29rem] overflow-scroll overflow-x-hidden max-h-min rounded-xl flex flex-col p-6 bg-white shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
               <button
                 className="absolute top-2 right-2 w-min text-2xl bg-transparent border-none cursor-pointer"
                 onClick={() => handleClose()}
