@@ -37,7 +37,11 @@ const MapBox = () => {
   useEffect(() => {
     if (map) {
       map.on("style.load", () => {
-        map.setFog({});
+        map.setFog({
+          color: "rgb(126, 161, 217)", // Blue fog / lower atmosphere
+          "high-color": "rgb(36, 92, 223)", // Blue sky / upper atmosphere
+          "horizon-blend": 0.13, // Exaggerate atmosphere (default is .1)
+        });
       });
 
       map.on("load", () => {
@@ -67,7 +71,7 @@ const MapBox = () => {
   return (
     <div
       ref={mapContainerRef}
-      className="w-full h-screen absolute overflow-hidden"
+      className="w-full h-screen relative overflow-hidden"
     >
       <Welcome map={map} />
     </div>
