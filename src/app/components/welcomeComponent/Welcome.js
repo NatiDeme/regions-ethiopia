@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Indicators from '../indicators'
-
+import hello from '../../../../public/ethiopia.geojson'
 
 const Welcome = (props) => {
     const { map } = props
@@ -12,6 +12,20 @@ const Welcome = (props) => {
             zoom: 5,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
+            map.addSource('me',{
+              'type': 'geojson',
+              'data': hello
+            })
+            map.addLayer({
+              'id': 'me', 
+              'type': 'line',
+              'source': 'me', 
+              'layout': {},
+              'paint': {
+                'line-color': '#000',
+                'line-width': 1
+              }
+              });
           
      }
   return (

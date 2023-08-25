@@ -3,7 +3,6 @@
 import Welcome from "../welcomeComponent/Welcome";
 import React, { useEffect, useRef, useState } from 'react'
 import initiateMap from './InitMap';
-import hello from '../../../../public/ethiopia.geojson'
 
 const MapBox = () => {
   const mapContainerRef = useRef(null);
@@ -41,22 +40,9 @@ const MapBox = () => {
       map.setFog({});
       });
 
-       map.on('load', () => {
-        map.addSource('me',{
-          'type': 'geojson',
-          'data': hello
-        })
-        map.addLayer({
-          'id': 'me', 
-          'type': 'line',
-          'source': 'me', 
-          'layout': {},
-          'paint': {
-            'line-color': '#000',
-            'line-width': 1
-          }
-          });
-      })
+      //  map.on('load', () => {
+       
+      // })
     
     map.on('moveend', () => {
       spinGlobe();
