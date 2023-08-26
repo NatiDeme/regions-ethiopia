@@ -48,12 +48,13 @@
 }
 
 .zoom-in {
-  opacity: 1;
-  animation: show 1s;
+  display: block;
+  animation: show 0.4s ease-in;
 }
 
 @keyframes show {
   0% {
+    display: block;
     opacity: 0;
     transform: scale(0);
   }

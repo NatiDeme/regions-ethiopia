@@ -9,49 +9,56 @@ import data from "./data/ethiopian_region_isolated.json";
 
 export default function Home() {
   const [content, setContent] = useState(data.maps[0]);
+  const [modal, setModal] = useState(false);
+  const [showDraggable, setShowDraggable] = useState(false);
+  // const [isDragging, setIsDragging] = useState(false);
   // console.log(content);
 
-  const handleClick = (id) => {
+  const toggleDraggable = (id) => {
     const country = data.maps.find((x) => x.map === id);
     setContent(country);
-    document.getElementById("firstElem").style.display = "block";
-    document.getElementById("firstElem").classList.add("zoom-in");
-    const rect = document.getElementById("firstElem").getBoundingClientRect();
-    console.log(rect.top, rect.right, rect.bottom, rect.left);
+    setShowDraggable(!showDraggable);
   };
+
   const handleClose = () => {
-    document.getElementById("firstElem").style.display = "none";
+    // setIsDragging(true);
+    setShowDraggable(false);
   };
+
+  // const handleDragStop = () => {
+  //   setIsDragging(false);
+  // };
   return (
     <>
       <div className="relative h-screen">
-        <Draggable
-          axis="both"
-          handle=".handle"
-          defaultPosition={{ x: 0, y: 0 }}
-          position={null}
-          grid={[5, 5]}
-          bounds="parent"
-          scale={1}
-        >
-          <div id="firstElem" className="hidden absolute top-0 right-0 z-10 ">
-            <div className="relative resize w-[40rem] h-[29rem] overflow-scroll overflow-x-hidden max-h-min rounded-xl flex flex-col p-6 bg-white shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
-              <button
-                className="absolute top-2 right-2 w-min text-2xl bg-transparent border-none cursor-pointer"
-                onClick={() => handleClose()}
-              >
-                <XMarkIcon className="h-6 w-6 text-black" />
-              </button>
-              <button className="handle absolute top-2 left-2 w-min text-2xl bg-transparent border-none cursor-pointer">
-                <EllipsisVerticalIcon className="h-6 w-6 text-black" />
-              </button>
+        {showDraggable && (
+          <Draggable
+            axis="both"
+            handle=".handle"
+            defaultPosition={{ x: 0, y: 0 }}
+            grid={[5, 5]}
+            bounds="parent"
+            scale={1}
+          >
+            <div className=" zoom-in absolute top-0 right-0 z-10">
+              <div className="relative resize w-[40rem] h-[29rem] overflow-scroll overflow-x-hidden max-h-min rounded-xl flex flex-col p-6 bg-white shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
+                <button
+                  className="absolute top-2 right-2 w-min text-2xl bg-transparent border-none cursor-pointer"
+                  onClick={() => handleClose()}
+                >
+                  <XMarkIcon className="h-6 w-6 text-black" />
+                </button>
+                <button className="handle absolute top-2 left-2 w-min text-2xl bg-transparent border-none cursor-pointer">
+                  <EllipsisVerticalIcon className="h-6 w-6 text-black" />
+                </button>
 
-              <Modal className contents={content} />
+                <Modal className contents={content} />
+              </div>
             </div>
-          </div>
-        </Draggable>
+          </Draggable>
+        )}
         {data.maps.map((city, i) => (
-          <button id={`${i}`} key={i} onClick={() => handleClick(city.map)}>
+          <button id={`${i}`} key={i} onClick={() => toggleDraggable(city.map)}>
             {" "}
             <Indicators bgprimary="bg-black" borderprimary="border-black" />
           </button>
