@@ -51,6 +51,9 @@
   display: block;
   animation: show 0.4s ease-in;
 }
+.zoom-out {
+  animation: hide 0.25s ease-out;
+}
 
 @keyframes show {
   0% {
@@ -61,5 +64,15 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
   }
 }
