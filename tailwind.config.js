@@ -18,7 +18,10 @@ module.exports = {
           "50%": { transform: "scale(80%)" },
         },
       },
-      backgroundImage: {},
+      fontFamily: {
+        cursive: ["Dancing Script", "cursive"],
+        Copperplate: ["Copperplate Gothic Std", "sans-serif"],
+      },
     },
   },
   plugins: [],

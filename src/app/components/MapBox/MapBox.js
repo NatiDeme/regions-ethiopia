@@ -38,12 +38,7 @@ const MapBox = () => {
     if(map) {
      map.on('style.load', () => {
       map.setFog({});
-      });
-
-      //  map.on('load', () => {
-       
-      // })
-    
+      });   
     map.on('moveend', () => {
       spinGlobe();
       });

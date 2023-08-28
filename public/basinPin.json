@@ -1,0 +1,171 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": " Ogaden"
+      },
+      "geometry": {
+        "coordinates": [
+          45.32020449585431,
+          7.4976905845339985
+        ],
+        "type": "Point"
+      },
+      "id": 0
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Merebgash"
+      },
+      "geometry": {
+        "coordinates": [
+          38.667029808430414,
+          14.309888012849626
+        ],
+        "type": "Point"
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tekeze"
+      },
+      "geometry": {
+        "coordinates": [
+          37.59718142962174,
+          13.881734281734524
+        ],
+        "type": "Point"
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Denakil"
+      },
+      "geometry": {
+        "coordinates": [
+          40.658860949613626,
+          13.145903192402827
+        ],
+        "type": "Point"
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ayisha"
+      },
+      "geometry": {
+        "coordinates": [
+          42.87001663555856,
+          11.19898930714362
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Baro akobo"
+      },
+      "geometry": {
+        "coordinates": [
+          34.589950440760106,
+          8.089163558815088
+        ],
+        "type": "Point"
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Omo gibe"
+      },
+      "geometry": {
+        "coordinates": [
+          36.61495801863063,
+          6.892590309858221
+        ],
+        "type": "Point"
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          38.15484336217003,
+          5.468643537348285
+        ],
+        "type": "Point"
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Genale dawa "
+      },
+      "geometry": {
+        "coordinates": [
+          40.82501010934885,
+          5.075955195431817
+        ],
+        "type": "Point"
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Wabi Shebele"
+      },
+      "geometry": {
+        "coordinates": [
+          43.11067342291565,
+          6.398021199789071
+        ],
+        "type": "Point"
+      },
+      "id": 9
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Abbay"
+      },
+      "geometry": {
+        "coordinates": [
+          37.6392598879159,
+          10.952982172519924
+        ],
+        "type": "Point"
+      },
+      "id": 10
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Awash"
+      },
+      "geometry": {
+        "coordinates": [
+          40.453416940037414,
+          9.876689971383172
+        ],
+        "type": "Point"
+      },
+      "id": 11
+    }
+  ]
+}
