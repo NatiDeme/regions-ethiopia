@@ -1,17 +1,14 @@
 "use client";
-import Image from "next/image";
 import Modal from "./components/Modal";
-import Draggable from "react-draggable";
 import { useState } from "react";
 import Indicators from "./components/indicators";
-import { XMarkIcon, EllipsisVerticalIcon } from "@heroicons/react/24/solid";
 import data from "./data/ethiopian_region_isolated.json";
 
 export default function Home() {
   const [content, setContent] = useState(data.maps[0]);
   const [showDraggable, setShowDraggable] = useState(false);
   // const [isDragging, setIsDragging] = useState(false);
-  console.log(content);
+  // console.log(content);
 
   const toggleDraggable = (id) => {
     const country = data.maps.find((x) => x.map === id);

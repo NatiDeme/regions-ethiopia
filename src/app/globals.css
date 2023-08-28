@@ -51,9 +51,6 @@
   display: block;
   animation: show 0.4s ease-in;
 }
-.zoom-out {
-  animation: hide 0.25s ease-out;
-}
 
 @keyframes show {
   0% {
