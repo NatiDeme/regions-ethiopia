@@ -1,13 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, createRef, useEffect } from "react";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import Indicators from "../indicators";
 import hello from '../../../../public/ethiopia.geojson'
-// import basin from '../../../../public/basinPin.json'
+import locations from '../../../../public/basinPin.json'
+import mapboxgl from "mapbox-gl";
 
 const Welcome = (props) => {
   const [display, setDisplay] = useState(true);
   const [flyStart, isAtStart] = useState(true);
+  let markerRef = createRef()
   const start = {
     center: [90, 0],
     zoom: 2.3,
@@ -43,9 +45,17 @@ const Welcome = (props) => {
           'line-width': 1
         }
         });
-    }
-    
+
+    }  
   };
+
+  useEffect(()=> {
+    console.log(display)
+    if(display == false & map){ 
+
+    }
+  }, [display])
+
   const handleClick = () => {
     setDisplay(false);
     const target = end;
@@ -58,7 +68,7 @@ const Welcome = (props) => {
     setDisplay(true);
   };
   return (
-    <>
+    <div>
       <div
         className={` absolute inset-0 backdrop-blur-sm bg-black/[.5] ${
           display ? "" : "hidden"
@@ -99,7 +109,7 @@ const Welcome = (props) => {
           <ArrowUturnLeftIcon className="h-8 w-8 text-white" />
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
