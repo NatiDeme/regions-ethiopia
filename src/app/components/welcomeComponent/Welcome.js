@@ -8,8 +8,9 @@ import mapboxgl from "mapbox-gl";
 
 const Welcome = (props) => {
   const [display, setDisplay] = useState(true);
-  const [flyStart, isAtStart] = useState(true);
+  const [flyStart, setFlyStart] = useState(false);
   let markerRef = createRef()
+
   const start = {
     center: [90, 0],
     zoom: 2.3,
@@ -45,9 +46,22 @@ const Welcome = (props) => {
           'line-width': 1
         }
         });
+        locations.features.map((n) => {
+          const marker =  new mapboxgl.Marker()
+        .setLngLat(n.geometry.coordinates)
+        .addTo(map);
+        marker._element.id = n.id;
+        marker._element.onclick = hi(n.id);
+        })
+      
+    document.getElementById(11).addEventListener('click', () => console.log('me meme'))
 
     }  
   };
+
+  useEffect(()=> {
+  }, [setFlyStart])
+
 
   useEffect(()=> {
     console.log(display)
@@ -68,9 +82,9 @@ const Welcome = (props) => {
     setDisplay(true);
   };
   return (
-    <div>
+    <div className="">
       <div
-        className={` absolute inset-0 backdrop-blur-sm bg-black/[.5] ${
+        className={` z-10 absolute inset-0 backdrop-blur-sm bg-black/[.5] ${
           display ? "" : "hidden"
         }`}
       >

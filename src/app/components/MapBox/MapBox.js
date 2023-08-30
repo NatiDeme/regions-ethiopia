@@ -5,12 +5,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import initiateMap from './InitMap';
 // import mapboxgl from "mapbox-gl";
 
-import MapboxDraw from '@mapbox/mapbox-gl-draw';
-
 const MapBox = () => {
   const mapContainerRef = useRef(null);
   const [map, setMap] = useState(null)
-
+  let userInteracting = false;
   useEffect(()=>{
     setMap(initiateMap(mapContainerRef.current)) 
   },[])
@@ -38,28 +36,32 @@ const MapBox = () => {
   }
 
   useEffect(() => {
-    if(map) {
-      // const el = document.createElement('div');
-      // el.className = 'marker';
-      // el.textContent = 'Marker';
-      // new mapboxgl.Marker(el)
-      //   .setLngLat([45.32020449585431, 7.4976905845339985])
-      //   .addTo(map);
-        const draw = new MapboxDraw({
-          displayControlsDefault: false,
-          controls: {
-            point: true,
-            trash: true,
-          },
-        });
-        
-        map.addControl(draw);
-    
-        map.on('draw.create', (event) => {
-          // Handle marker creation event
-          const coordinates =[45.32020449585431, 7.4976905845339985];
-          // console.log('Marker created at:', coordinates);
-        });
+    if(map) { 
+    // Pause spinning on interaction
+map.on('mousedown', () => {
+  userInteracting = false;
+  });
+   
+  // Restart spinning the globe when interaction is complete
+  map.on('mouseup', () => {
+  userInteracting = false;
+  spinGlobe();
+  });
+   
+  // These events account for cases where the mouse has moved
+  // off the map, so 'mouseup' will not be fired.
+  map.on('dragend', () => {
+  userInteracting = false;
+  spinGlobe();
+  });
+  map.on('pitchend', () => {
+  userInteracting = false;
+  spinGlobe();
+  });
+  map.on('rotateend', () => {
+  userInteracting = false;
+  spinGlobe();
+  });
      map.on('style.load', () => {
       map.setFog({});
       });   
@@ -76,9 +78,13 @@ const MapBox = () => {
 
 
   return (
-    <div ref={mapContainerRef} className='w-full h-screen'>
-     <Welcome map={map}/>
+    <>
+    <Welcome map={map} />
+    <div ref={mapContainerRef} className='w-full h-screen relative'>
     </div>
+    </>
+  
+    
   )
 }
 
