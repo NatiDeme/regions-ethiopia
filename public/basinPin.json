@@ -1,20 +1,6 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "name": " Ogaden"
-      },
-      "geometry": {
-        "coordinates": [
-          45.32020449585431,
-          7.4976905845339985
-        ],
-        "type": "Point"
-      },
-      "id": 0
-    },
+  "features": [    
     {
       "type": "Feature",
       "properties": {
@@ -29,7 +15,7 @@
       },
       "id": 1
     },
-    {
+        {
       "type": "Feature",
       "properties": {
         "name": "Tekeze"
@@ -43,7 +29,7 @@
       },
       "id": 2
     },
-    {
+        {
       "type": "Feature",
       "properties": {
         "name": "Denakil"
@@ -57,21 +43,35 @@
       },
       "id": 3
     },
-    {
+        {
       "type": "Feature",
       "properties": {
-        "name": "Ayisha"
+        "name": "Abbay"
       },
       "geometry": {
         "coordinates": [
-          42.87001663555856,
-          11.19898930714362
+          37.6392598879159,
+          10.952982172519924
         ],
         "type": "Point"
       },
       "id": 4
     },
-    {
+        {
+      "type": "Feature",
+      "properties": {
+        "name": "Awash"
+      },
+      "geometry": {
+        "coordinates": [
+          40.453416940037414,
+          9.876689971383172
+        ],
+        "type": "Point"
+      },
+      "id": 5
+    },
+        {
       "type": "Feature",
       "properties": {
         "name": "Baro akobo"
@@ -83,9 +83,9 @@
         ],
         "type": "Point"
       },
-      "id": 5
+      "id": 6
     },
-    {
+        {
       "type": "Feature",
       "properties": {
         "name": "Omo gibe"
@@ -97,11 +97,13 @@
         ],
         "type": "Point"
       },
-      "id": 6
+      "id": 7
     },
-    {
+       {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "Rift Valley"
+      },
       "geometry": {
         "coordinates": [
           38.15484336217003,
@@ -109,9 +111,9 @@
         ],
         "type": "Point"
       },
-      "id": 7
+      "id": 8
     },
-    {
+       {
       "type": "Feature",
       "properties": {
         "name": "Genale dawa "
@@ -123,7 +125,7 @@
         ],
         "type": "Point"
       },
-      "id": 8
+      "id": 9
     },
     {
       "type": "Feature",
@@ -137,35 +139,36 @@
         ],
         "type": "Point"
       },
-      "id": 9
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Abbay"
-      },
-      "geometry": {
-        "coordinates": [
-          37.6392598879159,
-          10.952982172519924
-        ],
-        "type": "Point"
-      },
       "id": 10
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Awash"
+        "name": " Ogaden"
       },
       "geometry": {
         "coordinates": [
-          40.453416940037414,
-          9.876689971383172
+          45.32020449585431,
+          7.4976905845339985
         ],
         "type": "Point"
       },
       "id": 11
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ayisha"
+      },
+      "geometry": {
+        "coordinates": [
+          42.87001663555856,
+          11.19898930714362
+        ],
+        "type": "Point"
+      },
+      "id": 12
     }
+    
   ]
 }

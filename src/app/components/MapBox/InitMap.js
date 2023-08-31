@@ -9,9 +9,11 @@ const initiateMap = (map) => {
     projection: "globe",
     zoom: 2.3,
     center: [90, 0],
-    dragPan: false,
-    scrollZoom: false,
-    touchZoomRotate: false,
+    dragPan: false, // Disable panning
+    scrollZoom: false, // Disable zooming via scroll
+    touchZoomRotate: false, // Disable zooming and rotating via touch gestures
+    doubleClickZoom: false, // Disable zooming on double-click
+    dragRotate: false, // Disable rotating via dragging
   };
   return new mapboxgl.Map(options);
 };

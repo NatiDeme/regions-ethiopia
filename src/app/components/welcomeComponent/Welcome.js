@@ -1,14 +1,17 @@
 "use client";
 import React, { useState, createRef, useEffect } from "react";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
-import Indicators from "../indicators";
 import hello from "../../../../public/ethiopia.geojson";
 import locations from "../../../../public/basinPin.json";
+import data from "../../../../public/ethiopian_region_isolated.json";
 import mapboxgl from "mapbox-gl";
+import Modal from "../Modal";
 
 const Welcome = (props) => {
   const [display, setDisplay] = useState(true);
-  const [flyStart, setFlyStart] = useState(false);
+  const [isFlying, setIsflying] = useState(false);
+  const [content, setContent] = useState(data.maps[0]);
+  const [showDraggable, setShowDraggable] = useState(false);
   let markerRef = createRef();
 
   const start = {
@@ -21,6 +24,8 @@ const Welcome = (props) => {
   };
   const { map } = props;
   const flyTo = (target) => {
+    map.interactive = false;
+    disableInteractions();
     map.flyTo({
       ...target,
       duration: 10000,
@@ -30,6 +35,8 @@ const Welcome = (props) => {
     if (target == start) {
       map.removeLayer("me");
       map.removeSource("me");
+      const marker = new mapboxgl.Marker();
+      marker.remove();
     } else {
       map.addSource("me", {
         type: "geojson",
@@ -52,19 +59,35 @@ const Welcome = (props) => {
         marker._element.id = n.id;
       });
 
-      document
-        .getElementById(11)
-        .addEventListener("click", () => console.log("me meme"));
+      for (let i = 1; i <= 12; i++) {
+        document
+          .getElementById(i)
+          .addEventListener("click", () => toggleDraggable(i));
+      }
     }
   };
+  function disableInteractions() {
+    map.dragPan.disable(); // Disable dragging
+    map.scrollZoom.disable(); // Disable scroll zooming
+    map.touchZoomRotate.disable(); // Disable touch zooming and rotating
+    map.dragRotate.disable(); // Disable drag rotation
+    map.boxZoom.disable(); // Disable box zooming
+    map.doubleClickZoom.disable(); // Disable double-click zooming
+  }
 
-  useEffect(() => {}, [setFlyStart]);
+  const toggleDraggable = (id) => {
+    const country = data.maps.find((x) => x.map === id);
+    setContent(country);
+    setShowDraggable(!showDraggable);
+  };
 
-  useEffect(() => {
-    console.log(display);
-    if ((display == false) & map) {
-    }
-  }, [display]);
+  // useEffect(() => {}, [setFlyStart]);
+
+  // useEffect(() => {
+  //   console.log(display);
+  //   if ((display == false) & map) {
+  //   }
+  // }, [display]);
 
   const handleClick = () => {
     setDisplay(false);
@@ -106,17 +129,23 @@ const Welcome = (props) => {
             </button>
           </div>
         </div>
-        {/* <button type="button">
-          <Indicators bgprimary="bg-black" borderprimary="border-black" />
-        </button> */}
       </div>
-      <div className="">
-        <button
-          className={`absolute z-10 right-2 top-2 ${display ? "hidden" : ""}`}
-          onClick={handleReverse}
-        >
-          <ArrowUturnLeftIcon className="h-8 w-8 text-white" />
-        </button>
+      <div className="relative">
+        {showDraggable && (
+          <Modal setShowDraggable={setShowDraggable} contents={content} />
+        )}
+      </div>
+      <div>
+        {!showDraggable && (
+          <button
+            className={`absolute right-2 top-2 z-10  ${
+              display ? "hidden" : ""
+            }`}
+            onClick={handleReverse}
+          >
+            <ArrowUturnLeftIcon className="h-8 w-8 text-white" />
+          </button>
+        )}
       </div>
     </div>
   );
