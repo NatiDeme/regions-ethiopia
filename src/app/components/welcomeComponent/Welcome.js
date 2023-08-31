@@ -9,7 +9,7 @@ import Modal from "../Modal";
 
 const Welcome = (props) => {
   const [display, setDisplay] = useState(true);
-  // const [isAtStart, setIsAtStart] = useState(false);
+  const [isAtStart, setIsAtStart] = useState(true);
   const [content, setContent] = useState(data.maps[0]);
   const [showDraggable, setShowDraggable] = useState(false);
   let markerRef = createRef();
@@ -26,7 +26,7 @@ const Welcome = (props) => {
   const flyTo = (target) => {
     map.flyTo({
       ...target,
-      duration: 10000,
+      duration: 6000,
       essential: true, // this animation is considered essential with respect to prefers-reduced-motion
     });
 
@@ -48,6 +48,19 @@ const Welcome = (props) => {
           "line-width": 1,
         },
       });
+    }
+  };
+
+  const toggleDraggable = (id) => {
+    const country = data.maps.find((x) => x.map === id);
+    setContent(country);
+    setShowDraggable(!showDraggable);
+  };
+
+  // useEffect(() => {}, [setFlyStart]);
+
+  useEffect(() => {
+    if (isAtStart == false) {
       locations.features.map((n) => {
         const marker = new mapboxgl.Marker()
           .setLngLat(n.geometry.coordinates)
@@ -61,31 +74,19 @@ const Welcome = (props) => {
           .addEventListener("click", () => toggleDraggable(i));
       }
     }
-  };
-
-  const toggleDraggable = (id) => {
-    const country = data.maps.find((x) => x.map === id);
-    setContent(country);
-    setShowDraggable(!showDraggable);
-  };
-
-  // useEffect(() => {}, [setFlyStart]);
-
-  // useEffect(() => {
-  //   console.log(display);
-  //   if ((display == false) & map) {
-  //   }
-  // }, [display]);
+  }, [isAtStart]);
 
   const handleClick = () => {
     setDisplay(false);
+    setIsAtStart(false);
     const target = end;
     flyTo(target);
   };
   const handleReverse = () => {
+    setIsAtStart(true);
+    setDisplay(true);
     const target = start;
     flyTo(target);
-    setDisplay(true);
   };
   return (
     <div className="">
