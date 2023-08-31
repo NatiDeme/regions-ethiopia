@@ -10,6 +10,8 @@ const initiateMap = (map) => {
     zoom: 2.3,
     center: [90, 0],
     dragPan: false,
+    scrollZoom: false,
+    touchZoomRotate: false,
   };
   return new mapboxgl.Map(options);
 };
