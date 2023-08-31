@@ -9,7 +9,7 @@ import Modal from "../Modal";
 
 const Welcome = (props) => {
   const [display, setDisplay] = useState(true);
-  const [isFlying, setIsflying] = useState(false);
+  // const [isAtStart, setIsAtStart] = useState(false);
   const [content, setContent] = useState(data.maps[0]);
   const [showDraggable, setShowDraggable] = useState(false);
   let markerRef = createRef();
@@ -24,8 +24,6 @@ const Welcome = (props) => {
   };
   const { map } = props;
   const flyTo = (target) => {
-    map.interactive = false;
-    disableInteractions();
     map.flyTo({
       ...target,
       duration: 10000,
@@ -35,8 +33,6 @@ const Welcome = (props) => {
     if (target == start) {
       map.removeLayer("me");
       map.removeSource("me");
-      const marker = new mapboxgl.Marker();
-      marker.remove();
     } else {
       map.addSource("me", {
         type: "geojson",
@@ -66,14 +62,6 @@ const Welcome = (props) => {
       }
     }
   };
-  function disableInteractions() {
-    map.dragPan.disable(); // Disable dragging
-    map.scrollZoom.disable(); // Disable scroll zooming
-    map.touchZoomRotate.disable(); // Disable touch zooming and rotating
-    map.dragRotate.disable(); // Disable drag rotation
-    map.boxZoom.disable(); // Disable box zooming
-    map.doubleClickZoom.disable(); // Disable double-click zooming
-  }
 
   const toggleDraggable = (id) => {
     const country = data.maps.find((x) => x.map === id);
