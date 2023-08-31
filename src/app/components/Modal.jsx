@@ -26,7 +26,7 @@ const Modal = ({ contents, setShowDraggable }) => {
         scale={1}
       >
         <div className=" zoom-in absolute top-0 right-0 z-10">
-          <div className="relative resize-x w-[30rem] h-screen overflow-x-hidden max-h-min rounded-xl flex flex-col bg-neutral-600 shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
+          <div className="relative resize-x w-[40rem] h-screen overflow-x-hidden max-h-min rounded-xl flex flex-col bg-black/[.85] shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
             <div className="flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
               <button className="handle box-content w-4 h-4 p-1 text-white border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-white hover:opacity-75 hover:no-underline cursor-grab active:cursor-grabbing">
                 <EllipsisVerticalIcon className="h-6 w-6 text-white" />
@@ -50,10 +50,10 @@ const Modal = ({ contents, setShowDraggable }) => {
                   {contents.title}
                 </h1>
               </div>
-              <p className=" mb-3 leading-tight text-sm font-normal text-white">
+              <p className=" mb-3 leading-tight text-base font-normal text-white">
                 {contents.description}
               </p>
-              <div className="flex flex-wrap gap-4 justify-around">
+              <div className="inline-flex flex-wrap gap-4 justify-center pt-5">
                 {contents.images.map((img, i) => (
                   <div
                     key={i}
@@ -61,24 +61,24 @@ const Modal = ({ contents, setShowDraggable }) => {
                     onClick={() => openImageModal(i)}
                   >
                     <Image
-                      className="h-auto rounded-lg bg-white"
+                      className="h-auto rounded-md bg-white"
                       src={img.image_path}
-                      width={300}
-                      height={300}
+                      width={250}
+                      height={250}
                       alt="Picture of the author"
                     />
                   </div>
                 ))}
               </div>
             </div>
-            <div className="flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+            {/* <div className="flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
               <button
                 onClick={() => handleClose()}
                 className="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
               >
                 Close
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </Draggable>
