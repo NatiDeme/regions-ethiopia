@@ -24,15 +24,19 @@ const Welcome = (props) => {
   };
   const { map } = props;
   const flyTo = (target) => {
+    let marker = "";
+    let mapMarkers = [];
     map.flyTo({
       ...target,
-      duration: 6000,
+      duration: 10000,
       essential: true, // this animation is considered essential with respect to prefers-reduced-motion
     });
 
     if (target == start) {
       map.removeLayer("me");
       map.removeSource("me");
+      mapMarkers.forEach((marker) => marker.remove());
+      mapMarkers = [];
     } else {
       map.addSource("me", {
         type: "geojson",
@@ -48,6 +52,19 @@ const Welcome = (props) => {
           "line-width": 1,
         },
       });
+      locations.features.map((n) => {
+        const marker = new mapboxgl.Marker()
+          .setLngLat(n.geometry.coordinates)
+          .addTo(map);
+        mapMarkers.push(marker);
+        marker._element.id = n.id;
+      });
+
+      for (let i = 1; i <= 12; i++) {
+        document
+          .getElementById(i)
+          .addEventListener("click", () => toggleDraggable(i));
+      }
     }
   };
 
@@ -60,21 +77,9 @@ const Welcome = (props) => {
   // useEffect(() => {}, [setFlyStart]);
 
   useEffect(() => {
-    if (isAtStart == false) {
-      locations.features.map((n) => {
-        const marker = new mapboxgl.Marker()
-          .setLngLat(n.geometry.coordinates)
-          .addTo(map);
-        marker._element.id = n.id;
-      });
-
-      for (let i = 1; i <= 12; i++) {
-        document
-          .getElementById(i)
-          .addEventListener("click", () => toggleDraggable(i));
-      }
+    if ((isAtStart == false) & map) {
     }
-  }, [isAtStart]);
+  }, []);
 
   const handleClick = () => {
     setDisplay(false);
