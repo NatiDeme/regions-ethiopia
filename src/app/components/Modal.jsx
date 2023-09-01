@@ -50,22 +50,29 @@ const Modal = ({ contents, setShowDraggable }) => {
                   {contents.title}
                 </h1>
               </div>
+              <Image
+                className="float-right"
+                src={contents.image_path}
+                width={250}
+                height={250}
+                alt="Picture of the basin"
+              />
               <p className=" mb-3 leading-tight text-base font-normal text-white">
                 {contents.description}
               </p>
-              <div className="inline-flex flex-wrap gap-4 justify-center pt-5">
+              <div className="columns-2 space-y-2 space-x-0 pt-5">
                 {contents.images.map((img, i) => (
                   <div
                     key={i}
-                    className="cursor-pointer"
+                    className="cursor-point flex justify-center"
                     onClick={() => openImageModal(i)}
                   >
                     <Image
-                      className="h-auto rounded-md bg-white"
+                      className="h-auto rounded-md"
                       src={img.image_path}
                       width={250}
                       height={250}
-                      alt="Picture of the author"
+                      alt="Picture of the basin"
                     />
                   </div>
                 ))}
@@ -85,7 +92,7 @@ const Modal = ({ contents, setShowDraggable }) => {
       {selectedImageIndex !== null && (
         <div className="fixed top-0 right-0 z-50 w-screen h-screen bg-black flex justify-center items-center">
           <Image
-            className="max-h-full max-w-full"
+            className="max-h-full max-w-full max"
             width={600}
             height={600}
             src={contents.images[selectedImageIndex].image_path}
