@@ -105,16 +105,16 @@ const Welcome = (props) => {
         }`}
       >
         <div className=" flex flex-col pt-[5%] items-center">
-          <h1 className="text-[14rem]  font-cursive font-bold text-white">
+          <h1 className="md:text-[14rem] text-[6rem]  font-cursive font-bold text-white">
             Welcome
           </h1>
-          <h2 className="text-4xl font-medium font-Copperplate leading sm:text-5xl text-sky-500">
+          <h2 className="text-4xl font-medium font-Copperplate text-center leading sm:text-5xl text-sky-500">
             To Ministry of Water and Energy
           </h2>
           <h2 className="text-4xl font-medium font-Copperplate leading sm:text-5xl text-white">
             Digital Museum
           </h2>
-          <p className=" mt-8 mb-12 text-lg text-white max-w-lg text-center">
+          <p className=" mt-8 mb-12 text-lg text-white max-w-lg text-center px-10">
             The twelve river basins in Ethiopia are some of the most diverse
             ecological regions on earth.
           </p>

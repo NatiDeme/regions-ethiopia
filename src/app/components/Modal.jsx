@@ -27,7 +27,7 @@ const Modal = ({ contents, setShowDraggable }) => {
         scale={1}
       >
         <div className=" zoom-in absolute top-0 right-0 z-10">
-          <div className="relative resize-x w-[40rem] h-screen overflow-x-hidden max-h-min rounded-xl flex flex-col bg-black/[.85] shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
+          <div className="relative resize-x w-[22rem] md:w-[40rem]  h-screen overflow-x-hidden max-h-min rounded-xl flex flex-col bg-black/[.85] shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
             <div className="flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
               <button className="handle box-content w-4 h-4 p-1 text-white border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-white hover:opacity-75 hover:no-underline cursor-grab active:cursor-grabbing">
                 <EllipsisVerticalIcon className="h-6 w-6 text-white" />
