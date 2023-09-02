@@ -55,7 +55,6 @@ const Welcome = (props) => {
         marker._element.id = n.id;
         })
       
-    document.getElementById(11).addEventListener('click', () => console.log('me meme'))
 
     }  
   };
@@ -65,7 +64,6 @@ const Welcome = (props) => {
 
 
   useEffect(()=> {
-    console.log(display)
     if(display == false & map){ 
 
     }
