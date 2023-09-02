@@ -9,7 +9,6 @@ import Modal from "../Modal";
 
 const Welcome = (props) => {
   const [display, setDisplay] = useState(true);
-  const [isAtStart, setIsAtStart] = useState(true);
   const [content, setContent] = useState(data.maps[0]);
   const [showDraggable, setShowDraggable] = useState(false);
   let markerRef = createRef();
@@ -23,9 +22,8 @@ const Welcome = (props) => {
     zoom: 5.7,
   };
   const { map } = props;
+  let mapMarkers = [];
   const flyTo = (target) => {
-    let marker = "";
-    let mapMarkers = [];
     map.flyTo({
       ...target,
       duration: 10000,
@@ -35,8 +33,6 @@ const Welcome = (props) => {
     if (target == start) {
       map.removeLayer("me");
       map.removeSource("me");
-      mapMarkers.forEach((marker) => marker.remove());
-      mapMarkers = [];
     } else {
       map.addSource("me", {
         type: "geojson",
@@ -76,20 +72,21 @@ const Welcome = (props) => {
 
   // useEffect(() => {}, [setFlyStart]);
 
-  useEffect(() => {
-    if ((isAtStart == false) & map) {
-    }
-  }, []);
+  // useEffect(() => {
+  //   if ((isAtStart == false) & map) {
+  //   }
+  // }, []);
 
   const handleClick = () => {
     setDisplay(false);
-    setIsAtStart(false);
     const target = end;
     flyTo(target);
   };
   const handleReverse = () => {
-    setIsAtStart(true);
     setDisplay(true);
+    for (let x = 1; x <= 12; x++) {
+      document.getElementById(x).remove();
+    }
     const target = start;
     flyTo(target);
   };
