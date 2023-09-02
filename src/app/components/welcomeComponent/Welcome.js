@@ -22,7 +22,12 @@ const Welcome = (props) => {
     zoom: 5.7,
   };
   const { map } = props;
-  let mapMarkers = [];
+
+  const popup = new mapboxgl.Popup({
+    closeButton: false, // Remove the close button
+    closeOnClick: false, // Prevents closing when clicking the map
+  });
+
   const flyTo = (target) => {
     map.flyTo({
       ...target,
@@ -49,11 +54,13 @@ const Welcome = (props) => {
         },
       });
       locations.features.map((n) => {
-        const marker = new mapboxgl.Marker()
+        const marker = new mapboxgl.Marker({
+          color: "black",
+        })
           .setLngLat(n.geometry.coordinates)
           .addTo(map);
-        mapMarkers.push(marker);
         marker._element.id = n.id;
+        marker._element.classList.add("custom-marker");
       });
 
       for (let i = 1; i <= 12; i++) {

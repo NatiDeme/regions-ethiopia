@@ -1,4 +1,4 @@
-"use client";
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import Draggable from "react-draggable";
 import React, { useState } from "react";
@@ -51,11 +51,9 @@ const Modal = ({ contents, setShowDraggable }) => {
                   {contents.title}
                 </h1>
               </div>
-              <Image
+              <img
                 className="float-right"
                 src={contents.image_path}
-                width={250}
-                height={250}
                 alt="Picture of the basin"
               />
               <p className=" mb-3 leading-tight text-base font-normal text-white">
@@ -68,11 +66,9 @@ const Modal = ({ contents, setShowDraggable }) => {
                     className="cursor-point flex justify-center"
                     onClick={() => openImageModal(i)}
                   >
-                    <Image
+                    <img
                       className="h-auto rounded-md"
                       src={img.image_path}
-                      width={250}
-                      height={250}
                       alt="Picture of the basin"
                     />
                   </div>
@@ -91,19 +87,17 @@ const Modal = ({ contents, setShowDraggable }) => {
         </div>
       </Draggable>
       {selectedImageIndex !== null && (
-        <div className="fixed top-0 right-0 z-50 w-screen h-screen bg-black flex justify-center items-center">
-          <Image
-            className="max-h-full max-w-full max"
-            width={600}
-            height={600}
+        <div className="fixed top-0 right-0 z-50 w-screen h-screen bg-black flex justify-center ">
+          <img
+            className=""
             src={contents.images[selectedImageIndex].image_path}
             alt="Full-screen"
           />
           <button
-            className="absolute top-4 right-4 text-white"
+            className="absolute top-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={closeImageModal}
           >
-            Close
+            x
           </button>
         </div>
       )}
