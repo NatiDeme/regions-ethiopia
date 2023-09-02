@@ -47,11 +47,12 @@ const Welcome = (props) => {
         }
         });
         locations.features.map((n) => {
-          const marker =  new mapboxgl.Marker()
+          const marker =  new mapboxgl.Marker({
+            color: 'black'
+          })
         .setLngLat(n.geometry.coordinates)
         .addTo(map);
         marker._element.id = n.id;
-        marker._element.onclick = hi(n.id);
         })
       
     document.getElementById(11).addEventListener('click', () => console.log('me meme'))
@@ -75,9 +76,14 @@ const Welcome = (props) => {
     const target = end;
     flyTo(target);
   };
+
+ 
   const handleReverse = () => {
-    isAtStart(false);
+    setFlyStart(false);
     const target = start;
+    for (let x=0; x <= 11; x++){
+      document.getElementById(x).remove()
+    }
     flyTo(target);
     setDisplay(true);
   };
@@ -117,7 +123,7 @@ const Welcome = (props) => {
       </div>
       <div className="">
         <button
-          className={`absolute right-2 top-2 ${display ? "hidden" : ""}`}
+          className={`absolute z-10 right-2 top-2 ${display ? "hidden" : ""}`}
           onClick={handleReverse}
         >
           <ArrowUturnLeftIcon className="h-8 w-8 text-white" />
