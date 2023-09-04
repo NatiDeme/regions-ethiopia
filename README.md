@@ -1,6 +1,7 @@
+# Nile Basin Explorer <a name="about-project"></a>
 <!-- TABLE OF CONTENTS -->
 
-# 📗 Table of Contents
+## 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
@@ -14,9 +15,12 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# Nile Basin Explorer <a name="about-project"></a>
+## Nile Basin Explorer <a name="about-project"></a>
 
 **Nile Basin** The "Nile Basin Explorer" is a dynamic digital exhibition created for the Ministry of Water and Energy, meticulously crafted with Next.js. This interactive platform offers a captivating journey through the twelve remarkable river basins of Ethiopia, showcasing these ecological wonders in unprecedented detail. Explore the unparalleled diversity and richness of these vital regions, gaining insights into their ecological significance, unique features, and the invaluable role they play in sustaining Ethiopia's natural heritage. With immersive visuals and informative content, the Ethiopia Basin Explorer promises to be an engaging educational resource, fostering a deeper understanding and appreciation of these critical ecosystems. Discover the intricate web of waterways and ecosystems that make Ethiopia's river basins some of the most biodiverse and awe-inspiring regions on our planet.
+
+![Capture2](https://raw.githubusercontent.com/NatiDeme/regions-ethiopia/add-modal-component/public/ScreeenShot.PNG)
+![Capture3](https://raw.githubusercontent.com/NatiDeme/regions-ethiopia/add-modal-component/public/screenShot3PNG.PNG)
 
 ## 🛠 Built With <a name="built-with"></a>
 
