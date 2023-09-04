@@ -18,9 +18,70 @@
   }
 }
 
-body {
+/* chrome */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.mapboxgl-ctrl-attrib-inner {
-  display: none;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.mapboxgl-marker {
+  cursor: pointer;
+}
+.custom-popup-content {
+  position: absolute;
+  top: -30px; /* Adjust this value to position the popup above the marker */
+  left: 0;
+  background-color: white;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.active-marker svg path {
+  fill: red; /* Change this to the desired fill color for the SVG */
 }
