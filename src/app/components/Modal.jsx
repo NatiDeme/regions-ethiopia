@@ -37,7 +37,7 @@ const Modal = ({ contents, setShowDraggable }) => {
                 <EllipsisVerticalIcon className="w-6 h-6 text-white" />
               </button>
               <h5
-                className="text-xl font-medium leading-normal text-white"
+                className="text-2xl font-bold leading-normal tracking-tight text-white "
                 id="exampleModalScrollableLabel"
               >
                 {contents.title}
@@ -49,18 +49,15 @@ const Modal = ({ contents, setShowDraggable }) => {
                 <XMarkIcon className="w-6 h-6 text-white" />
               </button>
             </div>
-            <div className="relative flex-auto p-4 overflow-y-auto">
-              <div className="inline-block text-center">
-                <h1 className="text-2xl font-bold tracking-tight text-white">
-                  {contents.title}
-                </h1>
+            <div className="relative flex-auto p-8 overflow-y-auto">
+              <div className="flex justify-center">
+                <img
+                  className=" h-[20rem] w-[20rem] "
+                  src={contents.image_path}
+                  alt="Picture of the basin"
+                />
               </div>
-              <img
-                className="float-right h-[20rem] w-[20rem]"
-                src={contents.image_path}
-                alt="Picture of the basin"
-              />
-              <p className="mb-3 text-base font-normal leading-tight text-white ">
+              <p className="px-3 mb-3 text-base font-normal leading-tight text-white ">
                 {contents.description}
               </p>
               <div className="pt-5 space-x-0 space-y-2 columns-2">
@@ -103,7 +100,7 @@ const Modal = ({ contents, setShowDraggable }) => {
             className="absolute px-4 py-2 font-bold text-white bg-blue-500 rounded top-4 right-4 hover:bg-blue-700"
             onClick={closeImageModal}
           >
-            x
+            <XMarkIcon className="w-6 h-6 text-white" />
           </button>
         </div>
       )}
