@@ -31,7 +31,7 @@ const Welcome = (props) => {
   const flyTo = (target) => {
     map.flyTo({
       ...target,
-      duration: 10000,
+      duration: 8000,
       essential: true, // this animation is considered essential with respect to prefers-reduced-motion
     });
 
