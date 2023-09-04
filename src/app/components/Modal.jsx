@@ -12,6 +12,10 @@ const Modal = ({ contents, setShowDraggable }) => {
   };
   const handleClose = () => {
     setShowDraggable(false);
+    const markers = document.querySelectorAll(".custom-marker");
+    markers.forEach((marker) => {
+      marker.classList.remove("active-marker");
+    });
   };
   const closeImageModal = () => {
     setSelectedImageIndex(null);
@@ -26,11 +30,11 @@ const Modal = ({ contents, setShowDraggable }) => {
         bounds="parent"
         scale={1}
       >
-        <div className=" zoom-in absolute top-0 right-0 z-10">
-          <div className="relative resize-x w-[22rem] md:w-[40rem]  h-screen overflow-x-hidden max-h-min rounded-xl flex flex-col bg-black/[.85] shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
-            <div className="flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-              <button className="handle box-content w-4 h-4 p-1 text-white border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-white hover:opacity-75 hover:no-underline cursor-grab active:cursor-grabbing">
-                <EllipsisVerticalIcon className="h-6 w-6 text-white" />
+        <div className="absolute top-0 right-0 z-10 zoom-in">
+          <div className="relative resize-x w-[22rem] md:w-[40rem]  h-screen overflow-x-hidden rounded-xl flex flex-col bg-black/[.85] shadow-[0_5px_15px_rgba(0,0,0,0.35)] ">
+            <div className="flex items-center justify-between flex-shrink-0 p-4 border-b border-gray-200 handle rounded-t-md">
+              <button className="box-content w-4 h-4 p-1 text-white border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-white hover:opacity-75 hover:no-underline cursor-grab active:cursor-grabbing">
+                <EllipsisVerticalIcon className="w-6 h-6 text-white" />
               </button>
               <h5
                 className="text-xl font-medium leading-normal text-white"
@@ -42,40 +46,42 @@ const Modal = ({ contents, setShowDraggable }) => {
                 onClick={() => handleClose()}
                 className="box-content w-4 h-4 p-1 text-white border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-white hover:opacity-75 hover:no-underline"
               >
-                <XMarkIcon className="h-6 w-6 text-white" />
+                <XMarkIcon className="w-6 h-6 text-white" />
               </button>
             </div>
-            <div className="flex-auto overflow-y-auto relative p-4">
+            <div className="relative flex-auto p-4 overflow-y-auto">
               <div className="inline-block text-center">
                 <h1 className="text-2xl font-bold tracking-tight text-white">
                   {contents.title}
                 </h1>
               </div>
               <img
-                className="float-right"
+                className="float-right h-[20rem] w-[20rem]"
                 src={contents.image_path}
                 alt="Picture of the basin"
               />
-              <p className=" mb-3 leading-tight text-base font-normal text-white">
+              <p className="mb-3 text-base font-normal leading-tight text-white ">
                 {contents.description}
               </p>
-              <div className="columns-2 space-y-2 space-x-0 pt-5">
+              <div className="pt-5 space-x-0 space-y-2 columns-2">
                 {contents.images.map((img, i) => (
                   <div
                     key={i}
-                    className="cursor-point flex justify-center"
+                    className="flex justify-center cursor-point"
                     onClick={() => openImageModal(i)}
                   >
-                    <img
-                      className="h-auto rounded-md"
-                      src={img.image_path}
-                      alt="Picture of the basin"
-                    />
+                    {img.image_path ? (
+                      <img
+                        className="h-auto rounded-md"
+                        src={img.image_path}
+                        alt="Picture of the basin"
+                      />
+                    ) : null}
                   </div>
                 ))}
               </div>
             </div>
-            {/* <div className="flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+            {/* <div className="flex flex-wrap items-center justify-end flex-shrink-0 p-4 border-t border-gray-200 rounded-b-md">
               <button
                 onClick={() => handleClose()}
                 className="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
@@ -87,14 +93,14 @@ const Modal = ({ contents, setShowDraggable }) => {
         </div>
       </Draggable>
       {selectedImageIndex !== null && (
-        <div className="fixed top-0 right-0 z-50 w-screen h-screen bg-black flex justify-center ">
+        <div className="fixed top-0 right-0 z-50 flex justify-center w-screen h-screen bg-black ">
           <img
             className=""
             src={contents.images[selectedImageIndex].image_path}
             alt="Full-screen"
           />
           <button
-            className="absolute top-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="absolute px-4 py-2 font-bold text-white bg-blue-500 rounded top-4 right-4 hover:bg-blue-700"
             onClick={closeImageModal}
           >
             x

@@ -73,6 +73,16 @@ const Welcome = (props) => {
 
   const toggleDraggable = (id) => {
     const country = data.maps.find((x) => x.map === id);
+    const markers = document.querySelectorAll(".custom-marker");
+    markers.forEach((marker) => {
+      marker.classList.remove("active-marker");
+    });
+
+    // Add "active-marker" class to the clicked marker
+    const clickedMarker = document.getElementById(id);
+    if (clickedMarker) {
+      clickedMarker.classList.add("active-marker");
+    }
     setContent(country);
     setShowDraggable(!showDraggable);
   };
@@ -108,13 +118,13 @@ const Welcome = (props) => {
           <h1 className="md:text-[14rem] text-[6rem]  font-cursive font-bold text-white">
             Welcome
           </h1>
-          <h2 className="text-4xl font-medium font-Copperplate text-center leading sm:text-5xl text-sky-500">
+          <h2 className="text-4xl font-medium text-center font-Copperplate leading sm:text-5xl text-sky-500">
             To Ministry of Water and Energy
           </h2>
-          <h2 className="text-4xl font-medium font-Copperplate leading sm:text-5xl text-white">
-            Digital Museum
+          <h2 className="text-4xl font-medium text-white font-Copperplate leading sm:text-5xl">
+            Digital Exhibition
           </h2>
-          <p className=" mt-8 mb-12 text-lg text-white max-w-lg text-center px-10">
+          <p className="max-w-lg px-10 mt-8 mb-12 text-lg text-center text-white ">
             The twelve river basins in Ethiopia are some of the most diverse
             ecological regions on earth.
           </p>
@@ -136,12 +146,23 @@ const Welcome = (props) => {
       <div>
         {!showDraggable && (
           <button
-            className={`absolute right-2 top-2 z-10  ${
+            className={`absolute right-4 top-6 z-10  ${
               display ? "hidden" : ""
             }`}
             onClick={handleReverse}
           >
-            <ArrowUturnLeftIcon className="h-8 w-8 text-white" />
+            <a
+              href="#_"
+              class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-[#3277d0]   rounded-full shadow-md group"
+            >
+              <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#3277d0]  group-hover:translate-x-0 ease">
+                <ArrowUturnLeftIcon className="w-6 h-6 text-white" />
+              </span>
+              <span class="absolute flex items-center justify-center w-full h-full text-[#3277d0]  transition-all duration-300 transform group-hover:translate-x-full ease">
+                HOME
+              </span>
+              <span class="relative invisible">Button Text</span>
+            </a>
           </button>
         )}
       </div>
